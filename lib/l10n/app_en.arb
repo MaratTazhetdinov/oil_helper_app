@@ -1,0 +1,50 @@
+{
+    "fuel_type_title": "Fuel Type",
+    "@fuel_type_title":{
+        "description": "Title for fuel type page"
+    },
+    "fuel_type_petrol": "Petrol",
+    "@fuel_type_petrol":{
+        "description": "Petrol fuel type"
+    },
+    "fuel_type_diesel": "Diesel",
+    "@fuel_type_diesel":{
+        "description": "Disel fuel type"
+    },
+    "manufacturer_title": "Manufacturer",
+    "@manufacturer_title":{
+        "description": "Title for manufacturer page"
+    },
+    "model_title": "Model",
+    "@model_title":{
+        "description": "Title for model page"
+    },
+    "engine_type_title": "Engine Type",
+    "@engine_type_title":{
+        "description": "Title for engine type page"
+    },
+    "lubes_title": "Recommended Lubes",
+    "@lubes_title":{
+        "description": "Title for lubes page"
+    },
+    "faq_title": "FAQ",
+    "@faq_title":{
+        "description": "Title for faq page"
+    },
+    "answer_title": "Answer",
+    "@answer_title":{
+        "description": "Title for answer page"
+    },
+    "history_title": "Requests History",
+    "@history_title":{
+        "description": "Title for history page"
+    },
+    "settings_title": "Settings",
+    "@settings_title":{
+        "description": "Title for settings page"
+    },
+    "language_option": "Language",
+    "@language_option":{
+        "description": "Option for choosing language on settings page"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "fuel_type_title": "Тип топлива",
+    "fuel_type_petrol": "Бензин",
+    "fuel_type_diesel": "Дизель",
+    "manufacturer_title": "Производитель",
+    "model_title": "Модель",
+    "engine_type_title": "Тип двигателя",
+    "lubes_title": "Моторные масла",
+    "faq_title": "Частые вопросы",
+    "answer_title": "Ответ",
+    "history_title": "История запросов",
+    "settings_title": "Настройки",
+    "language_option": "Язык"
+}
