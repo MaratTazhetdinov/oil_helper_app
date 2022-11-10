@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:io';
@@ -90,14 +91,22 @@ class DatabaseHelper {
     return db.rawQuery('SELECT * FROM rosneftLube WHERE lubeID=?', [lubeID]);
   }
 
-  Future<List<Map<String, Object?>>> getFaqList() async {
+  Future<List<Map<String, Object?>>> getFaqList(Locale locale) async {
     final db = await instance._database;
-    return db.rawQuery('SELECT * FROM faq');
+    if (locale.languageCode == 'ru') {
+      return db.rawQuery('SELECT * FROM faq_ru');
+    } else {
+      return db.rawQuery('SELECT * FROM faq');
+    }
   }
 
-  Future<List<Map<String, Object?>>> getFaqAnswer(int id) async {
+  Future<List<Map<String, Object?>>> getFaqAnswer(int id, Locale locale) async {
     final db = await instance._database;
-    return db.rawQuery('SELECT * FROM faq WHERE faqID=?', [id]);
+    if (locale.languageCode == 'ru') {
+      return db.rawQuery('SELECT * FROM faq_ru WHERE faqID=?', [id]);
+    } else {
+      return db.rawQuery('SELECT * FROM faq WHERE faqID=?', [id]);
+    }
   }
 
   Future<List<Map<String, Object?>>> getRequestsList() async {

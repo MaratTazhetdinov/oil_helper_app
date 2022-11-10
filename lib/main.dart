@@ -7,8 +7,11 @@ import 'package:oil_helper_app/routes/router.gr.dart';
 import 'package:oil_helper_app/theme/app_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'l10n/l10n.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(ProviderScope(child: AppWidget()));
 }
 
