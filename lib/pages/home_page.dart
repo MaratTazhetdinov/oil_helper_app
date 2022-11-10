@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:oil_helper_app/managers/locale_manager.dart';
 import 'package:oil_helper_app/routes/router.gr.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -45,9 +44,6 @@ class HomePage extends ConsumerWidget {
           ],
           onTap: (index) {
             tabsRouter.setActiveIndex(index);
-            if (index == 3) {
-              // ref.read(localeManagerProvider.notifier).setState();
-            }
           },
         );
       },

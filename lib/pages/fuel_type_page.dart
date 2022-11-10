@@ -16,50 +16,46 @@ class FuelTypePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.fuel_type_title),
       ),
-      body: Padding(
-        padding: EdgeInsets.only(
-            left: width * 0.2, right: width * 0.2, top: width * 0.2),
-        child: FutureBuilder<List<Car>>(
-            future: CarRepository.instance.getCarsList(),
-            builder: ((context, snapshot) {
-              return ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: snapshot.data != null ? snapshot.data!.length : 0,
-                  itemBuilder: ((context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: InkWell(
-                        onTap: () {
-                          context.router.push(ManufacturerRoute(
-                              fuelType: snapshot.data![index].fuelType));
-                        },
-                        child: SizedBox(
-                          height: width * 0.6,
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            elevation: 20,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  getImage(snapshot.data![index].fuelType),
-                                  height: width * 0.4,
-                                ),
-                                Text(
-                                  getText(
-                                      snapshot.data![index].fuelType, context),
-                                  style: Theme.of(context).textTheme.titleLarge,
-                                ),
-                              ],
+      body: FutureBuilder<List<Car>>(
+          future: CarRepository.instance.getCarsList(),
+          builder: ((context, snapshot) {
+            return ListView.builder(
+                itemCount: snapshot.data != null ? snapshot.data!.length : 0,
+                itemBuilder: ((context, index) {
+                  return InkWell(
+                    onTap: () {
+                      context.router.push(ManufacturerRoute(
+                          fuelType: snapshot.data![index].fuelType));
+                    },
+                    child: Container(
+                      margin: index == 0
+                          ? EdgeInsets.only(
+                              left: width * 0.2, right: width * 0.2, top: 32)
+                          : EdgeInsets.only(
+                              left: width * 0.2, right: width * 0.2, top: 8),
+                      height: width * 0.6,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        elevation: 20,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              getImage(snapshot.data![index].fuelType),
+                              height: width * 0.4,
                             ),
-                          ),
+                            Text(
+                              getText(snapshot.data![index].fuelType, context),
+                              style: Theme.of(context).textTheme.titleLarge,
+                            ),
+                          ],
                         ),
                       ),
-                    );
-                  }));
-            })),
-      ),
+                    ),
+                  );
+                }));
+          })),
     );
   }
 
